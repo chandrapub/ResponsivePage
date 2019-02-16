@@ -1,527 +1,407 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Auction website</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Auction website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-  <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #a2a2c3;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      /* Remove the navbar's default margin-bottom and rounded borders */ 
+      .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+      
+      /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+      .row.content {height: 450px}
+      
+      /* Set gray background color and 100% height */
       .sidenav {
-        height: auto;
+        padding-top: 20px;
+        background-color: #a2a2c3;
+        height: 100%;
+      }
+      
+      /* Set black background color, white text and some padding */
+      footer {
+        background-color: #555;
+        color: white;
         padding: 15px;
       }
-      .row.content {height:auto;} 
-    }
+      
+      /* On small screens, set height to 'auto' for sidenav and grid */
+      @media screen and (max-width: 767px) {
+        .sidenav {
+          height: auto;
+          padding: 15px;
+        }
+        .row.content {height:auto;} 
+      }
 
-    /*.list-item{
-    	display:block; 
-    	color: black;
-    	background-color: gray;
-    	max-width: 100%;
-    	margin: 10px;
-    }*/
-    .news{
-    	background-color: lightblue;
-    	text-align: left;
-    }
-    body{background-color: #e0e0eb}
-    .side-menu{
-    	color: black;
-    }
-    .side-menu1 li{list-style-type: none;
-    				display: block;
-    				width: 100%;
-    				background-color: gray;}
+      .news{
+      	background-color: lightblue;
+      	text-align: left;
+      }
+      body{background-color: #e0e0eb}
+      .side-menu{
+      	color: black;
+      }
+      .side-menu1 li{list-style-type: none;
+      				display: block;
+      				width: 100%;
+      				background-color: gray;}
 
-    .side-menu1 li a{color: black;
-    		margin-top: 25px;
-    		padding-left: 0px;
-    		font-size: 18px;
-    		font-weight: bold;
-    		display: block;
-    		background-color: gray;}
+      .side-menu1 li a{color: black;
+      		margin-top: 25px;
+      		padding-left: 0px;
+      		font-size: 18px;
+      		font-weight: bold;
+      		display: block;
+      		background-color: gray;}
 
-    .side-menu1{list-style-type: none;
-    }
-    	
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, Sans-serif;
-  background-color: #e0e0eb;
-}
-/* STYLE FOR NAVBAR */
-/* .logo {
-  font-size: 50px;
-  font-family: Arial;
-} */
-.navbar {
-  width: 100%;
-  height: 90px;
-  padding-top: 15px;
-  /* padding-bottom: 5px; */
-  background-color: #070617;
-  overflow: auto;
-}
+      .side-menu1{list-style-type: none;
+      }
+      	
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, Sans-serif;
+    background-color: #e0e0eb;
+  }
 
-.navbar a {
-  float: right;
-  padding: 12px;
-  color: #999999;
-  /* color: white; */
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.navbar a:hover {
-  cursor: pointer;
-
-  transition: 0.1s;
-  -webkit-transition: 0.1s;
-  -moz-transition: 0.1s;
-  color: #ffffff;
-}
-/*.active {
-        background-color: #4CAF50;
-        color: white;
-    }*/
-
-/* .active { */
-/* background-color: #4CAF50; */
-/* } */
-
-/* @media screen and (max-width: 500px) {
-  .navbar a {
-    float: none;
-    display: block;
-  }
-} */
-
-/* STYLE FOR FOOTER  */
-/* .dummy_page {
-  height: 500px;
-  width: 100%;
-  background-color: #f0f0f0;
-  text-align: center;
-  box-sizing: border-box;
-  padding: 60px 0px;
-} */
-/* STYLES SPECIFIC TO FOOTER  */
-.footer {
-  width: 100%;
-  position: relative;
-  height: auto;
-  background-color: #070617;
-}
-.footer .col {
-	/*display: flex;*/
-  width: 190px;
-  height: auto;
-  float: left;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  padding: 0px 20px 20px 20px;
-}
-.footer .col h1 {
-  margin: 0;
-  padding: 0;
-  font-family: inherit;
-  font-size: 12px;
-  line-height: 17px;
-  padding: 20px 0px 5px 0px;
-  color: rgba(255, 255, 255, 0.2);
-  font-weight: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-}
-.footer .col ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.footer .col ul li {
-  color: #999999;
-  font-size: 14px;
-  font-family: inherit;
-  font-weight: bold;
-  padding: 5px 0px 5px 0px;
-  cursor: pointer;
-  transition: 0.2s;
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-}
-.social ul li {
-  display: inline-block;
-  padding-right: 5px !important;
-}
-
-.footer .col ul li:hover {
-  color: #ffffff;
-  transition: 0.1s;
-  -webkit-transition: 0.1s;
-  -moz-transition: 0.1s;
-}
-.clearfix {
-  clear: both;
-}
-@media only screen and (min-width: 1280px) {
-  .contain {
-    width: 1200px;
-    margin: 0 auto;
-  }
-}
-@media only screen and (max-width: 1139px) {
-  .contain .social {
-    width: 1000px;
-    display: block;
-  }
-  .social h1 {
-    margin: 0px;
-  }
-}
-@media only screen and (max-width: 950px) {
-  .footer .col {
-    width: 33%;
-  }
-  .footer .col h1 {
-    font-size: 14px;
-  }
-  .footer .col ul li {
-    font-size: 13px;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .footer .col {
-    width: 50%;
-  }
-  .footer .col h1 {
-    font-size: 14px;
-  }
-  .footer .col ul li {
-    font-size: 13px;
-  }
-  .navbar a {
-    float: none;
-    display: block;
-  }
-}
-@media only screen and (max-width: 340px) {
-  .footer .col {
+  .navbar {
     width: 100%;
+    height: 90px;
+    padding-top: 15px;
+    background-color: #070617;
+    overflow: auto;
   }
-}
-  </style>
-</head>
-<body>
 
-<!-- <div class="navbar"> -->
-        <!-- <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>  -->
-<!-- 
-        <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
-        <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
-        <a href="#"><i class="fa fa-fw fa-flag"></i></a>
-        <a href="#validation">Validation</a>
-        <a href="#delivery">Delivery</a>
-        <a href="#guide">Guide</a>
-        <a href="#auction">Auction</a>
-    
-        
-        <a style ="float: left; font:Didot; font-size: 30px; color: red;">Louritz.com </a>
+  .navbar a {
+    float: right;
+    padding: 12px;
+    color: #999999;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+  }
 
-    </div> -->
+  .navbar a:hover {
+    cursor: pointer;
+
+    transition: 0.1s;
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    color: #ffffff;
+  }
+  /* STYLES SPECIFIC TO FOOTER  */
+  .footer {
+    width: 100%;
+    position: relative;
+    height: auto;
+    background-color: #070617;
+  }
+  .footer .col {
+  	/*display: flex;*/
+    width: 190px;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0px 20px 20px 20px;
+  }
+  .footer .col h1 {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 17px;
+    padding: 20px 0px 5px 0px;
+    color: rgba(255, 255, 255, 0.2);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+  }
+  .footer .col ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer .col ul li {
+    color: #999999;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 5px 0px 5px 0px;
+    cursor: pointer;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+  }
+  .social ul li {
+    display: inline-block;
+    padding-right: 5px !important;
+  }
+
+  .footer .col ul li:hover {
+    color: #ffffff;
+    transition: 0.1s;
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+  }
+  .clearfix {
+    clear: both;
+  }
+  @media only screen and (min-width: 1280px) {
+    .contain {
+      width: 1200px;
+      margin: 0 auto;
+    }
+  }
+  @media only screen and (max-width: 1139px) {
+    .contain .social {
+      width: 1000px;
+      display: block;
+    }
+    .social h1 {
+      margin: 0px;
+    }
+  }
+  @media only screen and (max-width: 950px) {
+    .footer .col {
+      width: 33%;
+    }
+    .footer .col h1 {
+      font-size: 14px;
+    }
+    .footer .col ul li {
+      font-size: 13px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .footer .col {
+      width: 50%;
+    }
+    .footer .col h1 {
+      font-size: 14px;
+    }
+    .footer .col ul li {
+      font-size: 13px;
+    }
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+  @media only screen and (max-width: 340px) {
+    .footer .col {
+      width: 100%;
+    }
+  }
+    </style>
+  </head>
+  <body>
 
     <nav class="navbar navbar-default">
     <div class="container-fluid">
-	<div class="col-sm-4">
-	<a style ="float: left; font:Didot; font-size: 30px; color: red;">Louritz.com </a>
-	</div>
-	<div class="col-sm-8">
-	 <a href="#auction">Auction</a>
-	 <a href="#guide">Guide</a>
-	 <a href="#delivery">Delivery</a>
-	 <a href="#validation">Validation</a>
-	 <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
-	 <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
-	 </div>
-	
-    </div>
-</nav>
+  	<div class="col-sm-4">
+  	<a style ="float: left; font:Didot; font-size: 30px; color: red;">Louritz.com </a>
+  	</div>
+  	<div class="col-sm-8">
+  	 <a href="#auction">Auction</a>
+  	 <a href="#guide">Guide</a>
+  	 <a href="#delivery">Delivery</a>
+  	 <a href="#validation">Validation</a>
+  	 <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
+  	 <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+  	 </div>
+  	
+      </div>
+  </nav>
 
-<!-- <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Logo</a>
-      <a class="navbar-brand" href="#">Lauritz.com</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Auction</a></li>
-      <li><a href="#">Guide</a></li>
-      <li><a href="#">Delivery</a></li>
-      <li><a href="#">Valuation</a></li>
-    </ul> -->
+  <div class="container-fluid text-center">
 
-
-    <!-- <ul class="nav navbar-nav navbar-right">
-        <li><span class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </span>
-    </span></li> -->
-    <!-- <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav> -->
-  
-<div class="container-fluid text-center">
-
-  <div class="row content">
-  	<div class="col-sm-2" style="background-color: #5c8a8a; height: 900px">
-      <div class="panel panel-primary" >
-        <div class="panel-heading">Theme Of The Month <p style="font-size: 20px">Grand pa Toys</p></div>
-        <div class="panel-body"><img src="images\ToyTheme.jpg" class="img-responsive" style="width:100%; height: 137px" alt="Image"></div>
-      </div>
-      <div class="col-sm-2">
-      
-          	<ul class="side-menu1">
-            <li style="background-color: blue; color: green"><a href="#">Decoratives</a></li>
-            <li><a href="#">Arts</a></li>
-            <li><a href="#">Books</a></li>
-            <li><a href="#">Carpets</a></li>
-            <li><a href="#">Coins</a></li>
-            <li><a href="#">Glasses</a></li>
-            <li><a href="#">Jewellery</a></li>
-            <li><a href="#">Furnitures</a></li>
-            <li><a href="#">Sculptures</a></li>
-            <li><a href="#">Porcelains</a></li>
-            <li><a href="#">Stamps</a></li>
-            <li><a href="#">Wines</a></li>
-
-
-            
-    </div>
-</div>
-    
-    <div class="col-sm-8">
-    	<div class="row-contant">
-    	<div style="font-size: 30px; font-weight: bold;">Last Chance
-    	</div>
-    	<div class="col-sm-3"> 
-      <div class="panel panel-primary">
-        <div class="panel-body"><img src="images\decoratives.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Decoratives-online auctions</div>
-      </div>
-    </div>
-    <div class="col-sm-3"> 
-      <div class="panel panel-primary">
-        <div class="panel-body"><img src="images\Jewellery.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Jewellery- Lynby center</div>
-      </div>
-    </div>
-     <div class="col-sm-3"> 
-      <div class="panel panel-primary">
-        <div class="panel-body"><img src="images\Sculpture1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Sculpture-online auction</div>
-      </div>
-    </div>
-    <div class="col-sm-3"> 
-      <div class="panel panel-primary">
-        <div class="panel-body"><img src="images\wine1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Wine-Ishøj center</div>
-      </div>
-    </div>
-    </div>
-    <!-- </div> -->
-    <br>
-    <div class="row-contant">
-    <!-- <div class="col-sm-8"> -->
-    	<div></div>
-   <p style="font-size: 25px;
-  font-weight: bold; text-align: center;"> Upcoming Auction
-    	</p>
-    <div class="col-sm-6"> 
-      
-      <div class="news">
-         <a> <p>  &#9658; Coins 28, oct kl 15:00 - online auction</p></a>
-		 <a> <p> &#9658;  Modern arts and design 30, oct kl 14:00-16:00 - at Nærum Fodbuld klub</p> </a>
-		 <a><p> &#9658;  Fine and rare wines 01, nov kl 14:00 - online auction</p></a>
-		 <a><p> &#9658; Furnitures, Tomorrow - at Rødovre idræt center
-         BogForum, 30, oct - DTU Lyngby Campus</p></a>
-         <a><p> &#9658; Fine and rare wines 01, nov kl 14:00 - online auction</p></a>
-		 <a><p> &#9658; Furnitures, Tomorrow - at Rødovre idræt center
-         BogForum, 30, oct - DTU Lyngby Campus</p></a>
-    </div>
-</div>
-    <div class="col-sm-6"> 
-    	<div class="news">
-
-    	 <a><p>  &#9658; Coins 28, oct kl 15:00 - online auction</p></a>
-		 <a><p> &#9658; Modern arts and design 30, oct kl 14:00-16:00 - at Nærum Fodbuld klub</p></a>
-		 <a><p> &#9658; Fine and rare wines 01, nov kl 14:00 - online auction</p></a>
-		 <a><p> &#9658; Furnitures, Tomorrow - at Rødovre idræt center
-         BogForum, 30, oct - DTU Lyngby Campus</p></a>
-         <a><p> &#9658; Fine and rare wines 01, nov kl 14:00 - online auction</p></a>
-		 <a><p> &#9658; Furnitures, Tomorrow - at Rødovre idræt center
-         BogForum, 30, oct - DTU Lyngby Campus</p></a>
-</div>
-</div>
-</div>
-     <br>
-     <div class="row-contant">
-    <!-- <div class="col-sm-8">  -->
-    	<div style="font-size: 30px; font-weight: bold;">Delux offer
-    	</div>
-     <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-body"><img src="images\clock1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Clock</div>
-      </div>
-    </div>
-
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-body"><img src="images\Furniture.png" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Chair</div>
-      </div>
-    </div>
-
-    <div class="col-sm-4"> 
-      <div class="panel panel-primary">
-        <div class="panel-body"><img src="images\porcelain.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Porcelain</div>
-      </div>
-    </div>
-    </div>
-    </div>
-    
-    	<!-- <div id= "add"> -->
-    <!-- <div class="row-contant"> -->
-    <div class="col-sm-2">
-      <div class="well">
-        <p><img src="images\add2.jpg"></p>
-      </div>
-      <div class="well">
-        <p><img src="images\mac.jpg"></p>
-      </div>
-      <div class="well">
-        <p><img src="images\appleRed.jpg"></p>
-      </div>
-      <div class="well">
-        <h1>GDPR</h1>
-      </div>
-      <div class="well">
-        <h1>FAQ</h1>
-      </div>
-    </div>	
-    	</div>
-    	</div>
-    
-    
-<div class="footer">
-        <div class="contain">
-            <div class="col">
-                <h1>Company</h1>
-                <ul>
-                    <li>About</li>
-                    <li>Mission</li>
-                    <li>Services</li>
-                    <!-- <li>Social</li>
-                    <li>Get in touch</li> -->
-                </ul>
-            </div>
-            <div class="col">
-                <h1>Products</h1>
-                <ul>
-                    <li>About</li>
-                    <li>Mission</li>
-                    <li>Services</li>
-                    <!-- <li>Social</li>
-                    <li>Get in touch</li> -->
-                </ul>
-            </div>
-            <!-- <div class="col">
-                <h1>Accounts</h1>
-                <ul>
-                    <li>About</li>
-                    <li>Mission</li>
-                    <li>Services</li>
-                    <li>Social</li>
-                    <li>Get in touch</li>
-                </ul>
-            </div> -->
-            <!-- <div class="col">
-                <h1>Resources</h1>
-                <ul>
-                    <li>Webmail</li>
-                    <li>Redeem code</li>
-                    <li>WHOIS lookup</li>
-                    <li>Site map</li>
-                    <li>Web templates</li>
-                    <li>Email templates</li>
-                </ul>
-            </div> -->
-            <div class="col">
-                <h1>Support</h1>
-                <ul>
-                    <li>Contact us</li>
-                    <li>Web chat</li>
-
-                </ul>
-            </div>
-            <div class="col social">
-                <h1>Social</h1>
-                <ul>
-                    <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;"></li>
-                    <li><img src="https://svgshare.com/i/5eA.svg" width="32" style="width: 32px;"></li>
-                    <li><img src="https://svgshare.com/i/8zE.svg" width="34" style="width: 34px;"></li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
+    <div class="row content">
+    	<div class="col-sm-2" style="background-color: #5c8a8a; height: 900px">
+        <div class="panel panel-primary" >
+          <div class="panel-heading">Theme Of The Month <p style="font-size: 20px">Grand pa Toys</p></div>
+          <div class="panel-body"><img src="images\ToyTheme.jpg" class="img-responsive" style="width:100%; height: 137px" alt="Image"></div>
         </div>
-    </div>
+        <div class="col-sm-2">
+        
+            	<ul class="side-menu1">
+              <li style="background-color: blue; color: green"><a href="#">Decoratives</a></li>
+              <li><a href="#">Arts</a></li>
+              <li><a href="#">Books</a></li>
+              <li><a href="#">Carpets</a></li>
+              <li><a href="#">Coins</a></li>
+              <li><a href="#">Glasses</a></li>
+              <li><a href="#">Jewellery</a></li>
+              <li><a href="#">Furnitures</a></li>
+              <li><a href="#">Sculptures</a></li>
+              <li><a href="#">Porcelains</a></li>
+              <li><a href="#">Stamps</a></li>
+              <li><a href="#">Wines</a></li>
+      </div>
+  </div>
+      
+      <div class="col-sm-8">
+      	<div class="row-contant">
+      	<div style="font-size: 30px; font-weight: bold;">Last Chance
+      	</div>
+      	<div class="col-sm-3"> 
+        <div class="panel panel-primary">
+          <div class="panel-body"><img src="images\decoratives.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Decoratives-online auctions</div>
+        </div>
+      </div>
+      <div class="col-sm-3"> 
+        <div class="panel panel-primary">
+          <div class="panel-body"><img src="images\Jewellery.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Jewellery- Lynby center</div>
+        </div>
+      </div>
+       <div class="col-sm-3"> 
+        <div class="panel panel-primary">
+          <div class="panel-body"><img src="images\Sculpture1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Sculpture-online auction</div>
+        </div>
+      </div>
+      <div class="col-sm-3"> 
+        <div class="panel panel-primary">
+          <div class="panel-body"><img src="images\wine1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Wine-Ishøj center</div>
+        </div>
+      </div>
+      </div>
+      <br>
+      <div class="row-contant">
+      	<div></div>
+     <p style="font-size: 25px;
+    font-weight: bold; text-align: center;"> Upcoming Auction
+      	</p>
+      <div class="col-sm-6"> 
+        
+        <div class="news">
+           <a> <p>  &#9658; Coins 28, oct kl 15:00 - online auction</p></a>
+  		 <a> <p> &#9658;  Modern arts and design 30, oct kl 14:00-16:00 - at Nærum Fodbuld klub</p> </a>
+  		 <a><p> &#9658;  Fine and rare wines 01, nov kl 14:00 - online auction</p></a>
+  		 <a><p> &#9658; Furnitures, Tomorrow - at Rødovre idræt center
+           BogForum, 30, oct - DTU Lyngby Campus</p></a>
+           <a><p> &#9658; Fine and rare wines 01, nov kl 14:00 - online auction</p></a>
+  		 <a><p> &#9658; Furnitures, Tomorrow - at Rødovre idræt center
+           BogForum, 30, oct - DTU Lyngby Campus</p></a>
+      </div>
+  </div>
+      <div class="col-sm-6"> 
+      	<div class="news">
 
+      	 <a><p>  &#9658; Coins 28, oct kl 15:00 - online auction</p></a>
+  		 <a><p> &#9658; Modern arts and design 30, oct kl 14:00-16:00 - at Nærum Fodbuld klub</p></a>
+  		 <a><p> &#9658; Fine and rare wines 01, nov kl 14:00 - online auction</p></a>
+  		 <a><p> &#9658; Furnitures, Tomorrow - at Rødovre idræt center
+           BogForum, 30, oct - DTU Lyngby Campus</p></a>
+           <a><p> &#9658; Fine and rare wines 01, nov kl 14:00 - online auction</p></a>
+  		 <a><p> &#9658; Furnitures, Tomorrow - at Rødovre idræt center
+           BogForum, 30, oct - DTU Lyngby Campus</p></a>
+  </div>
+  </div>
+  </div>
+       <br>
+       <div class="row-contant">
+      <!-- <div class="col-sm-8">  -->
+      	<div style="font-size: 30px; font-weight: bold;">Delux offer
+      	</div>
+       <div class="col-sm-4"> 
+        <div class="panel panel-primary">
+          <div class="panel-body"><img src="images\clock1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Clock</div>
+        </div>
+      </div>
 
-<!-- <footer class="container-fluid text-center">
-  <p>Footer Text</p> -->
-<!-- </footer> -->
+      <div class="col-sm-4"> 
+        <div class="panel panel-primary">
+          <div class="panel-body"><img src="images\Furniture.png" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Chair</div>
+        </div>
+      </div>
 
-</body>
-</html>
+      <div class="col-sm-4"> 
+        <div class="panel panel-primary">
+          <div class="panel-body"><img src="images\porcelain.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Porcelain</div>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+      <div class="col-sm-2">
+        <div class="well">
+          <p><img src="images\add2.jpg"></p>
+        </div>
+        <div class="well">
+          <p><img src="images\mac.jpg"></p>
+        </div>
+        <div class="well">
+          <p><img src="images\appleRed.jpg"></p>
+        </div>
+        <div class="well">
+          <h1>GDPR</h1>
+        </div>
+        <div class="well">
+          <h1>FAQ</h1>
+        </div>
+      </div>	
+      	</div>
+      	</div>
+      
+      
+  <div class="footer">
+          <div class="contain">
+              <div class="col">
+                  <h1>Company</h1>
+                  <ul>
+                      <li>About</li>
+                      <li>Mission</li>
+                      <li>Services</li>
+                      <li>Get in touch</li> -->
+                  </ul>
+              </div>
+              <div class="col">
+                  <h1>Products</h1>
+                  <ul>
+                      <li>About</li>
+                      <li>Mission</li>
+                      <li>Services</li>
+                  </ul>
+              </div>
+
+              <div class="col">
+                  <h1>Support</h1>
+                  <ul>
+                      <li>Contact us</li>
+                      <li>Web chat</li>
+                  </ul>
+              </div>
+              <div class="col social">
+                  <h1>Social</h1>
+                  <ul>
+                      <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;"></li>
+                      <li><img src="https://svgshare.com/i/5eA.svg" width="32" style="width: 32px;"></li>
+                      <li><img src="https://svgshare.com/i/8zE.svg" width="34" style="width: 34px;"></li>
+                  </ul>
+              </div>
+              <div class="clearfix"></div>
+          </div>
+      </div>
+
+  </body>
+  </html>
