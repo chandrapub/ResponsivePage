@@ -12,201 +12,8 @@
 
     <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-      /* Remove the navbar's default margin-bottom and rounded borders */ 
-      .navbar {
-        margin-bottom: 0;
-        border-radius: 0;
-      }
-      
-      /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-      .row.content {height: 450px}
-      
-      /* Set gray background color and 100% height */
-      .sidenav {
-        padding-top: 20px;
-        background-color: #a2a2c3;
-        height: 100%;
-      }
-      
-      /* Set black background color, white text and some padding */
-      footer {
-        background-color: #555;
-        color: white;
-        padding: 15px;
-      }
-      
-      /* On small screens, set height to 'auto' for sidenav and grid */
-      @media screen and (max-width: 767px) {
-        .sidenav {
-          height: auto;
-          padding: 15px;
-        }
-        .row.content {height:auto;} 
-      }
-
-      .news{
-      	background-color: lightblue;
-      	text-align: left;
-      }
-      body{background-color: #e0e0eb}
-      .side-menu{
-      	color: black;
-      }
-      .side-menu1 li{list-style-type: none;
-      				display: block;
-      				width: 100%;
-      				background-color: gray;}
-
-      .side-menu1 li a{color: black;
-      		margin-top: 25px;
-      		padding-left: 0px;
-      		font-size: 18px;
-      		font-weight: bold;
-      		display: block;
-      		background-color: gray;}
-
-      .side-menu1{list-style-type: none;
-      }
-      	
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, Sans-serif;
-    background-color: #e0e0eb;
-  }
-
-  .navbar {
-    width: 100%;
-    height: 90px;
-    padding-top: 15px;
-    background-color: #070617;
-    overflow: auto;
-  }
-
-  .navbar a {
-    float: right;
-    padding: 12px;
-    color: #999999;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .navbar a:hover {
-    cursor: pointer;
-
-    transition: 0.1s;
-    -webkit-transition: 0.1s;
-    -moz-transition: 0.1s;
-    color: #ffffff;
-  }
-  /* STYLES SPECIFIC TO FOOTER  */
-  .footer {
-    width: 100%;
-    position: relative;
-    height: auto;
-    background-color: #070617;
-  }
-  .footer .col {
-  	/*display: flex;*/
-    width: 190px;
-    height: auto;
-    float: left;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    padding: 0px 20px 20px 20px;
-  }
-  .footer .col h1 {
-    margin: 0;
-    padding: 0;
-    font-family: inherit;
-    font-size: 12px;
-    line-height: 17px;
-    padding: 20px 0px 5px 0px;
-    color: rgba(255, 255, 255, 0.2);
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-  }
-  .footer .col ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  .footer .col ul li {
-    color: #999999;
-    font-size: 14px;
-    font-family: inherit;
-    font-weight: bold;
-    padding: 5px 0px 5px 0px;
-    cursor: pointer;
-    transition: 0.2s;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-  }
-  .social ul li {
-    display: inline-block;
-    padding-right: 5px !important;
-  }
-
-  .footer .col ul li:hover {
-    color: #ffffff;
-    transition: 0.1s;
-    -webkit-transition: 0.1s;
-    -moz-transition: 0.1s;
-  }
-  .clearfix {
-    clear: both;
-  }
-  @media only screen and (min-width: 1280px) {
-    .contain {
-      width: 1200px;
-      margin: 0 auto;
-    }
-  }
-  @media only screen and (max-width: 1139px) {
-    .contain .social {
-      width: 1000px;
-      display: block;
-    }
-    .social h1 {
-      margin: 0px;
-    }
-  }
-  @media only screen and (max-width: 950px) {
-    .footer .col {
-      width: 33%;
-    }
-    .footer .col h1 {
-      font-size: 14px;
-    }
-    .footer .col ul li {
-      font-size: 13px;
-    }
-  }
-  @media only screen and (max-width: 500px) {
-    .footer .col {
-      width: 50%;
-    }
-    .footer .col h1 {
-      font-size: 14px;
-    }
-    .footer .col ul li {
-      font-size: 13px;
-    }
-    .navbar a {
-      float: none;
-      display: block;
-    }
-  }
-  @media only screen and (max-width: 340px) {
-    .footer .col {
-      width: 100%;
-    }
-  }
-    </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
+    
   </head>
   <body>
 
@@ -233,7 +40,7 @@
     	<div class="col-sm-2" style="background-color: #5c8a8a; height: 900px">
         <div class="panel panel-primary" >
           <div class="panel-heading">Theme Of The Month <p style="font-size: 20px">Grand pa Toys</p></div>
-          <div class="panel-body"><img src="AuctionImages\ToyTheme.jpg" class="img-responsive" style="width:100%; height: 137px" alt="Image"></div>
+          <div class="panel-body"><img src="ToyTheme.jpg" class="img-responsive" style="width:100%; height: 137px" alt="Image"></div>
         </div>
         <div class="col-sm-2">
         
@@ -259,25 +66,25 @@
       	</div>
       	<div class="col-sm-3"> 
         <div class="panel panel-primary">
-          <div class="panel-body"><img src="AuctionImages\decoratives.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-body"><img src="decoratives.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">Decoratives-online auctions</div>
         </div>
       </div>
       <div class="col-sm-3"> 
         <div class="panel panel-primary">
-          <div class="panel-body"><img src="AuctionImages\Jewellery.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-body"><img src="Jewellery.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">Jewellery- Lynby center</div>
         </div>
       </div>
        <div class="col-sm-3"> 
         <div class="panel panel-primary">
-          <div class="panel-body"><img src="AuctionImages\Sculpture1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-body"><img src="Sculpture1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">Sculpture-online auction</div>
         </div>
       </div>
       <div class="col-sm-3"> 
         <div class="panel panel-primary">
-          <div class="panel-body"><img src="AuctionImages\wine1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-body"><img src="wine1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">Wine-Ishøj center</div>
         </div>
       </div>
@@ -322,21 +129,21 @@
       	</div>
        <div class="col-sm-4"> 
         <div class="panel panel-primary">
-          <div class="panel-body"><img src="AuctionImages\clock1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-body"><img src="clock1.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">Clock</div>
         </div>
       </div>
 
       <div class="col-sm-4"> 
         <div class="panel panel-primary">
-          <div class="panel-body"><img src="AuctionImages\Furniture.png" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-body"><img src="Furniture.png" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">Chair</div>
         </div>
       </div>
 
       <div class="col-sm-4"> 
         <div class="panel panel-primary">
-          <div class="panel-body"><img src="AuctionImages\porcelain.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-body"><img src="porcelain.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
           <div class="panel-footer">Porcelain</div>
         </div>
       </div>
@@ -345,13 +152,13 @@
       
       <div class="col-sm-2">
         <div class="well">
-          <p><img src="AuctionImages\add2.jpg"></p>
+          <p><img src="add2.jpg"></p>
         </div>
         <div class="well">
-          <p><img src="AuctionImages\mac.jpg"></p>
+          <p><img src="mac.jpg"></p>
         </div>
         <div class="well">
-          <p><img src="AuctionImages\appleRed.jpg"></p>
+          <p><img src="appleRed.jpg"></p>
         </div>
         <div class="well">
           <h1>GDPR</h1>
